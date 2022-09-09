@@ -38,8 +38,27 @@ exports.movieId = (req, res) => {
       res.status(200).send(movie.data.title);
     })
     .catch((err) => {
-      res.status(505).send(err);
+      res.status(500).send(err);
     });
 };
 
+exports.movieSearch = (req, res) => {
+  const { search } = req.params;
 
+  axios
+    .get(
+      `${tmdb}/search/movie?${api_key}&language=en-US&query=${search}&page=1&include_adult=true`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": contentType,
+        },
+      }
+    )
+    .then((search) => {
+      res.status(200).send(search.data.results.map((x)=> x.title));
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+};

@@ -10,5 +10,8 @@ movies.get("/", moviesController.movies);
 // Llamado a Movie en particular por su id
 movies.get("/:id", moviesController.movieId)
 
+// Busqueda de una movie
+movies.get("/search/:search", moviesController.movieSearch)
+
 
 module.exports = movies;

@@ -7,6 +7,9 @@ Favorites.init({
   filmId: {
     type: S.INTEGER
   },
+  filmTitle:{
+    type:S.INTEGER
+  }
 },{
   timestamps:false, sequelize: db, modelname: "Favorites"
 });

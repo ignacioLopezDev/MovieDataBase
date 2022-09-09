@@ -2,14 +2,14 @@ const express = require("express");
 const router = express.Router();
 const moviesRoutes = require("./movies");
 const seriesRoutes = require("./series");
-const favoriteRoutes = require("./favorites");
+const usersRoutes = require("./users");
 const singInroute = require("./signIn");
 const signUpRoute= require("./signUp");
 
 
 router.use("/movies", moviesRoutes);
 router.use("/series", seriesRoutes);
-router.use("/favorites", favoriteRoutes);
+router.use("/users", usersRoutes);
 router.use("/signup", signUpRoute);
 router.use("/login",singInroute );
 
