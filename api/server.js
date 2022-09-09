@@ -20,6 +20,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes
 app.use("/", routes);
+app.get("/", (req, res) => {
+  res.send("aplicacion en curso")
+})
 
 // error Middleware
 app.use((err, req, res, next) => {
